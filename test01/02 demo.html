@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+    <div id="app">
+        <table>
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>商品名称</th>
+                        <th>单价</th>
+                        <th>数量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item,index) in list">
+                        <td>{{index+1}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td>
+                            <button @click="minus(index)">-</button>
+                            {{item.count}}
+                            <button @click='add(index)'>+</button>
+                        </td>
+                        <td>
+                            <button @click="deleteItem(index)">删除</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <div>总价格：￥ {{totalPrice}}</div>
+        </table>
+ 
+    </div>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+	
+var app = new Vue({
+    el:'#app',
+    data:{
+        list:[
+            {
+                id:100,
+                name:'apple6',
+                price:3000,
+                count:1
+            },
+            {
+                id:101,
+                name:'apple7',
+                price:2000,
+                count:1
+            },
+            {
+                id:102,
+                name:'apple8',
+                price:1000,
+                count:1
+            }
+        ]
+    },
+    computed: {
+        totalPrice (){
+            var price = 0;
+            for (let index = 0; index < this.list.length; index++) {
+                var item = this.list[index];
+                price += item.price * item.count;
+                
+            }
+            return price;
+        }
+    },
+    methods: {
+        add(index){
+            this.list[index].count ++;
+        },
+        minus(index){
+            if(this.list[index].count === 1) return;
+            this.list[index].count --;
+        },
+        deleteItem(index){
+            this.list.splice(index,1);
+        }
+    },
+})
+	</script>
+</body>
+</html>
