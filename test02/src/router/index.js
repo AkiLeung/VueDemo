@@ -1,16 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Test01 from '@/components/Test01'
-import ElementUi from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
+import Home from '@/components/Home'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
-Vue.use(ElementUi)
 Vue.use(Router)
 
 export default new Router({
   routes: [{
     path: '/',
-    name: 'Test01',
-    component: Test01
+    name: '主页',
+    component: Home,
+    iconCls: 'el-icon-platform-element'
+  },
+  {
+    path: '/Header',
+    name: 'Header',
+    component: Header,
+    iconCls: 'el-icon-platform-element'
+  }, {
+    path: '/Footer',
+    name: 'Footer',
+    component: Footer,
+    iconCls: 'el-icon-platform-element'
   }]
 })

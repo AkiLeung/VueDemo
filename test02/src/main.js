@@ -3,8 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import ElementUI from 'element-ui' // 饿了么UI
+import 'element-ui/lib/theme-chalk/index.css' // 饿了么UI
 
 Vue.config.productionTip = false
+Vue.use(ElementUI) // 饿了么UI
 
 /* eslint-disable no-new */
 new Vue({
