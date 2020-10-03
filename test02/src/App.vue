@@ -5,18 +5,20 @@
 </template>
 
 <script>
-export default {
-  name: 'App',
-  methods: {
+import myHeader from "./components/Header";
 
+export default {
+  name: "App",
+  components: {
+    myHeader
   }
-}
+};
 </script>
 
 <style>
 #app {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 </style>

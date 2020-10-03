@@ -3,21 +3,25 @@
     <el-container style="height: 900px">
       <el-aside width="200px">Aside</el-aside>
       <el-container>
-        <el-header> header </el-header>
+        <el-header> <home-header></home-header> </el-header>
         <el-main> main </el-main>
-        <el-footer>
-          123
-        </el-footer>
+        <el-footer> <home-footer></home-footer> </el-footer>
       </el-container>
     </el-container>
   </div>
 </template>
 
 <script>
+import HomeHeader from "./Header";
+import HomeFooter from "./Footer";
+
 export default {
-  name: 'Home',
-  data () {}
-}
+  name: "Home",
+  components: {
+    HomeHeader,
+    HomeFooter,
+  },
+};
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
