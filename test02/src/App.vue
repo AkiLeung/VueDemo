@@ -5,14 +5,9 @@
 </template>
 
 <script>
-import myHeader from "./components/Header";
-
 export default {
-  name: "App",
-  components: {
-    myHeader
-  }
-};
+  name: 'App'
+}
 </script>
 
 <style>

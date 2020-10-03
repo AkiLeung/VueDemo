@@ -12,16 +12,16 @@
 </template>
 
 <script>
-import HomeHeader from "./Header";
-import HomeFooter from "./Footer";
+import HomeHeader from './Header'
+import HomeFooter from './Footer'
 
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     HomeHeader,
-    HomeFooter,
-  },
-};
+    HomeFooter
+  }
+}
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
