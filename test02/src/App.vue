@@ -11,9 +11,13 @@ export default {
 </script>
 
 <style>
+html,
+body {
+  margin: 0;
+}
 #app {
+  color: #2c3e50;
   position: absolute;
   width: 100%;
-  height: 100%;
 }
 </style>

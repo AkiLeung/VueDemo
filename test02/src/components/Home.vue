@@ -1,11 +1,17 @@
 <template>
   <div>
-    <el-container style="height: 900px">
+    <el-container>
       <el-aside width="200px">Aside</el-aside>
       <el-container>
-        <el-header> <home-header></home-header> </el-header>
-        <el-main> main </el-main>
-        <el-footer> <home-footer></home-footer> </el-footer>
+        <el-header>
+          <home-header></home-header>
+        </el-header>
+        <el-main>
+          <home-main></home-main>
+        </el-main>
+        <el-footer>
+          <home-footer></home-footer>
+        </el-footer>
       </el-container>
     </el-container>
   </div>
@@ -13,12 +19,14 @@
 
 <script>
 import HomeHeader from './Header'
+import HomeMain from './Main'
 import HomeFooter from './Footer'
 
 export default {
   name: 'Home',
   components: {
     HomeHeader,
+    HomeMain,
     HomeFooter
   }
 }
@@ -41,7 +49,8 @@ export default {
   background-color: #e9eef3;
   color: #333;
   text-align: center;
-  margin: 0 0 0 0;
+  margin: 0;
+  min-height: calc(100vh - 120px);
 }
 
 .el-footer {
