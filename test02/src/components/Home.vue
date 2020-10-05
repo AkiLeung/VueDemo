@@ -18,9 +18,9 @@
 </template>
 
 <script>
-import HomeHeader from './Header'
-import HomeMain from './Main'
-import HomeFooter from './Footer'
+import HomeHeader from './frame/Header'
+import HomeMain from './frame/Main'
+import HomeFooter from './frame/Footer'
 
 export default {
   name: 'Home',
@@ -49,8 +49,12 @@ export default {
   background-color: #e9eef3;
   color: #333;
   text-align: center;
-  margin: 0;
+  /*margin: 0;*/
   min-height: calc(100vh - 120px);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .el-footer {
