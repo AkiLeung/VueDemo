@@ -8,15 +8,40 @@ cnpm install vue-cli -g      //全局安装 vue-cli
 vue init webpack  ”项目名称”
 
 
+/******************************************************************************************************/
 引入Element-UI
 npm i element-ui -S
 
-/***************************************************/
+在 main.js 中引入并使用
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 Vue.use(ElementUI)
-/***************************************************/
+/******************************************************************************************************/
+
+
+/******************************************************************************************************/
+引入vuetify
+npm install --save vuetify
+
+在 main.js 中引入并使用
+// 引入vuetify
+import Vuetify from 'vuetify'
+
+// 使用vuetify
+Vue.use(Vuetify)
+
+----------------------------------------------------
+引入图标
+npm install material-design-icons-iconfont -D
+npm install @mdi/font -D
+
+在 main.js 中引入并使用
+import 'vuetify/dist/vuetify.min.css'
+
+npm install axios --save
+/******************************************************************************************************/
+
 
 cnpm install
 cnpm run dev

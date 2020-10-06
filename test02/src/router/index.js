@@ -1,16 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
+import Login from '@/components/Login'
+// import Home from '@/components/Home'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: '主页',
-      component: Home,
-      iconCls: 'el-icon-platform-element'
-    }
-  ]
+    routes: [{
+        path: '/',
+        name: '登录',
+        component: Login,
+        iconCls: 'el-icon-platform-element'
+    }]
 })
