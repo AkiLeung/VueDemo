@@ -1,24 +1,20 @@
 <template>
-  <v-app>
+  <v-app id="inspire">
+    <!-- 页面顶端 -->
     <v-app-bar app color="primary" dark>
+      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <div class="d-flex align-center">
         <v-img
           alt="Logo"
           class="shrink mr-2"
           contain
-          src="./assets/vuetify-logo-dark.png"
+          src="@/assets/vuetify-logo-dark.png"
           transition="scale-transition"
           width="40"
         />
       </div>
-      <v-img
-        alt="Name"
-        class="shrink mt-1 hidden-sm-and-down"
-        contain
-        min-width="100"
-        src="./assets/vuetify-name-dark.png"
-        width="100"
-      />
+      <v-spacer></v-spacer>
+      <v-toolbar-title>Application</v-toolbar-title>
       <v-spacer></v-spacer>
 
       <v-btn href="#" target="_blank" text>
@@ -27,24 +23,32 @@
       </v-btn>
     </v-app-bar>
 
-    <v-main>
-      <FrameHome />
+    <v-navigation-drawer color="primary" v-model="drawer" fixed temporary>
+      <!-- 导航菜单 -->
+      <FrameMenu></FrameMenu>
+    </v-navigation-drawer>
+
+    <v-main class="grey lighten-2">
+      <!-- 操作主页 -->
+      <FrameMain></FrameMain>
     </v-main>
   </v-app>
 </template>
 
 <script>
-import FrameHome from "./components/FrameHome";
+// import FrameHead from "./components/frame/FrameHead";
+import FrameMenu from "./components/frame/FrameMenu";
+import FrameMain from "./components/frame/FrameMain";
 
 export default {
   name: "App",
 
   components: {
-    FrameHome,
+    // FrameHead,
+    FrameMenu,
+    FrameMain,
   },
 
-  data: () => ({
-    //
-  }),
+  data: () => ({ drawer: null }),
 };
 </script>
