@@ -4,9 +4,11 @@ npm  install  -g  cnpm  --registry=https://registry.npm.taobao.org
 安装vue-cli
 cnpm install vue-cli -g      //全局安装 vue-cli
 
-创建项目
+创建项目 CLI2.X创建方法
 vue init webpack  ”项目名称”
 
+创建项目 CLI3.X创建方法（推荐）
+vue create ”项目名称”
 
 /******************************************************************************************************/
 引入Element-UI
@@ -21,9 +23,15 @@ Vue.use(ElementUI)
 
 
 /******************************************************************************************************/
-引入vuetify
-npm install --save vuetify
+vue create ”项目名称”
+选择 Vue2.X
 
+# navigate to new project directory
+cd  ”项目名称”
+
+vue add vuetify
+
+--------------------------------------------------------------------------------------------------------
 在 main.js 中引入并使用
 // 引入vuetify
 import Vuetify from 'vuetify'
@@ -31,7 +39,6 @@ import Vuetify from 'vuetify'
 // 使用vuetify
 Vue.use(Vuetify)
 
-----------------------------------------------------
 引入图标
 npm install material-design-icons-iconfont -D
 npm install @mdi/font -D
@@ -40,6 +47,8 @@ npm install @mdi/font -D
 import 'vuetify/dist/vuetify.min.css'
 
 npm install axios --save
+
+npm run serve
 /******************************************************************************************************/
 
 
