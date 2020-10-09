@@ -1,17 +1,25 @@
 <template>
   <v-app>
-    <br /><br /><br /><br /><br /><br />
+    <v-app-bar app color="primary" dark>
+      <v-toolbar-title class="headline text-uppercase">
+        <span class="font-weight-light">Login</span>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-btn flat href="http://www.baidu.com" target="_blank">
+        <span class="mr-2">Latest Release</span>
+      </v-btn>
+    </v-app-bar>
     <v-card width="400" class="mx-auto mt-5">
       <v-card-title class="pb-0">
         <h1 class="display-1">Login</h1>
       </v-card-title>
       <v-card-text>
         <v-form>
-          <v-text-field label="Username" prepend-icon="mdi-account-circle" />
+          <v-text-field label="" prepend-icon="mdi-account-circle" />
           <v-text-field
-            :type="showPassword ? 'text' : 'password'"
-            label="Password"
+            label=""
             prepend-icon="mdi-lock"
+            :type="showPassword ? 'text' : 'password'"
             :append-icon="showPassword ? 'mdi-eye' : 'mdi-eye-off'"
             @click:append="showPassword = !showPassword"
           />
@@ -30,6 +38,7 @@
 <script>
 export default {
   name: "Login",
+  components: {},
   data() {
     return {
       showPassword: false,
