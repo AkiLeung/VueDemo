@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app id="login">
     <v-app-bar app color="primary" dark>
       <v-toolbar-title class="headline text-uppercase">
         <span class="font-weight-light">Login</span>
@@ -9,7 +9,7 @@
         <span class="mr-2">Latest Release</span>
       </v-btn>
     </v-app-bar>
-    <v-card width="400" class="mx-auto mt-5">
+    <v-card max-height="400" width="400" class="mx-auto mt-5" >
       <v-card-title class="pb-0">
         <h1 class="display-1">Login</h1>
       </v-card-title>
@@ -46,3 +46,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+body {
+overflow-y: hidden;
+}
+</style>
