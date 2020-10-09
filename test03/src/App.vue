@@ -3,7 +3,7 @@
     <!-- 页面顶端 -->
     <v-app-bar app color="primary" dark>
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
-      <!-- <div class="d-flex align-center">
+      <div class="d-flex align-center">
         <v-img
           alt="Logo"
           class="shrink mr-2"
@@ -12,7 +12,7 @@
           transition="scale-transition"
           width="40"
         />
-      </div> -->
+      </div>
 
       <v-spacer></v-spacer>
       <v-toolbar-title>Application Title</v-toolbar-title>
