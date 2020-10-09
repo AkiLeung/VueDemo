@@ -1,11 +1,10 @@
 <template>
   <v-app-bar color="primary" app dark>
     <v-btn @click="drawerAction()" icon>
-      <!-- <v-app-bar-nav-icon /> -->
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon />
     </v-btn>
     <v-toolbar-title class="headline text-uppercase">
-      <span class="mr-2">Application Name</span>
+      <span class="mr-2">Vuetify信息服务申请DEMO</span>
     </v-toolbar-title>
     <v-spacer></v-spacer>
     <template v-if="$vuetify.breakpoint.mdAndUp">
@@ -168,7 +167,6 @@
 
 <script>
 export default {
-  name: "FrameHead",
   model: {
     prop: "drawerprop",
     event: "itemChanged",
