@@ -23,17 +23,18 @@
 </template>
 
 <script>
+import store from '@/store.js';
+
 export default {
   name: "FrameMenu",
-
-  data() {
-    return {
-      items: [
+  store,
+  data: () => ({
+    drawer: store.state.drawer,
+    items: [
         { title: "Dashboard", icon: "mdi-view-dashboard" },
         { title: "Account", icon: "mdi-account-box" },
         { title: "Admin", icon: "mdi-gavel" },
-      ],
-    };
-  },
+    ],
+  }),
 };
 </script>

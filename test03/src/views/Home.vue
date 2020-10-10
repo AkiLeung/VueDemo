@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <!-- 页面顶端 -->
     <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="showHide"></v-app-bar-nav-icon>
       <div class="d-flex align-center">
         <v-img
           alt="Logo"
@@ -45,13 +45,16 @@
 </template>
 
 <script>
+import store from '@/store.js';
+
 // import FrameHead from "../components/frame/FrameHead";
 import FrameMenu from "../components/frame/FrameMenu";
 import FrameMain from "../components/frame/FrameMain";
 
-export default {
-  name: "App",
 
+export default {
+  name: "Home",
+  store,
   components: {
     // FrameHead,
     FrameMenu,
@@ -59,7 +62,7 @@ export default {
   },
 
   data: () => ({
-    drawer: null,
+    drawer: store.state.drawer,
     items: [
       { title: "Click Me" },
       { title: "Click Me" },
@@ -67,5 +70,13 @@ export default {
       { title: "Click Me 2" },
     ],
   }),
+  methods:{
+    showHide(){
+      //store.commit('testLogin');
+      this.drawer = !this.drawer;
+      store.state.drawer = this.drawer; //!store.state.drawer;
+    } 
+ 
+  } 
 };
 </script>
