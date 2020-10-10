@@ -89,7 +89,8 @@ export default {
   },
   methods:{
     login(){
-      console.log('login vue login');
+      //console.log('login vue login');
+      this.$router.push('/home');
     }
   }
 };
