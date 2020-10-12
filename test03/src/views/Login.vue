@@ -10,8 +10,6 @@
       </v-btn>
     </v-app-bar> -->
 
-
-
     <v-bottom-navigation
       v-model="value"
       :background-color="color"
