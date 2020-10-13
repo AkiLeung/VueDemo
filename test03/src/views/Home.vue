@@ -2,7 +2,7 @@
   <v-app id="inspire">
     <!-- 页面顶端 -->
     <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon @click="showHide"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click.stop="showHide"></v-app-bar-nav-icon>
       <div class="d-flex align-center">
         <v-img
           alt="Logo"
@@ -32,7 +32,9 @@
       </v-menu>
     </v-app-bar>
 
-    <v-navigation-drawer color="primary" v-model="drawer" fixed temporary>
+    <v-navigation-drawer
+      v-model="drawer" 
+      fixed temporary>
       <!-- 导航菜单 -->
       <FrameMenu></FrameMenu>
     </v-navigation-drawer>
@@ -72,9 +74,10 @@ export default {
   }),
   methods:{
     showHide(){
+      this.isActive = true;
       //store.commit('testLogin');
       this.drawer = !this.drawer;
-      store.state.drawer = this.drawer; //!store.state.drawer;
+      store.state.drawer = this.drawer;
     } 
  
   } 

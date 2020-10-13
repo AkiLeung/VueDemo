@@ -1,6 +1,22 @@
 <template>
-  <v-card class="mx-auto" height="100%" width="100%">
-    <v-navigation-drawer class="primary" dark permanent>
+  <!-- <v-card class="mx-auto" height="100%" width="100%"> -->
+    <v-navigation-drawer 
+     v-model="drawer" 
+     src="@/assets/bg-2.jpg"
+     class="primary" dark permanent>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Application
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            subtext
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
       <v-list>
         <v-list-item v-for="item in items" :key="item.title" link>
           <v-list-item-icon>
@@ -19,7 +35,7 @@
         </div>
       </template>
     </v-navigation-drawer>
-  </v-card>
+  <!-- </v-card> -->
 </template>
 
 <script>

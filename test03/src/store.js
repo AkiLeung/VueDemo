@@ -10,10 +10,10 @@ export default new Vuex.Store({
     },
     mutations: {
         //所有方法
-        testLogin(){
-            this.state.drawer = !this.state.drawer;
-            console.log('store drawer: ' + this.state.drawer);
-        }
+        // testLogin(){
+        //     this.state.drawer = !this.state.drawer;
+        //     console.log('store drawer: ' + this.state.drawer);
+        // }
     },
     actions: {}
 });
