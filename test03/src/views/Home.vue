@@ -74,10 +74,9 @@ export default {
   }),
   methods:{
     showHide(){
-      this.isActive = true;
       //store.commit('testLogin');
       this.drawer = !this.drawer;
-      store.state.drawer = this.drawer;
+      // store.state.drawer = this.drawer;
     } 
  
   } 
