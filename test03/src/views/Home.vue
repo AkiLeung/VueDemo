@@ -1,8 +1,15 @@
 <template>
   <v-app id="inspire">
+     <v-system-bar app>
+      <v-spacer></v-spacer>
+      <v-icon>mdi-square</v-icon>
+      <v-icon>mdi-circle</v-icon>
+      <v-icon>mdi-triangle</v-icon>
+    </v-system-bar>
+
     <!-- 页面顶端 -->
     <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon @click.stop="showHide"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="showHide"></v-app-bar-nav-icon>
       <div class="d-flex align-center">
         <v-img
           alt="Logo"
@@ -25,19 +32,62 @@
           </v-btn>
         </template>
         <v-list>
-          <v-list-item v-for="(item, i) in items" :key="i">
+          <v-list-item v-for="(item, i) in more" :key="i">
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
         </v-list>
       </v-menu>
     </v-app-bar>
 
-    <v-navigation-drawer
+   <v-navigation-drawer
       v-model="drawer" 
-      fixed temporary>
-      <!-- 导航菜单 -->
-      <FrameMenu></FrameMenu>
+      fixed temporary
+      >
+    <v-navigation-drawer 
+     v-model="drawer" 
+     src="@/assets/bg-2.jpg"
+     class="primary" 
+     fixed temporary>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="title">
+            Application
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            subtext
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+
+      <v-list>
+        <v-list-item v-for="item in menus" :key="item.title" link>
+          <v-list-item-icon>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>{{ item.title }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+      <template v-slot:append>
+        <div class="pa-2">
+          <v-btn block> Logout </v-btn>
+        </div>
+      </template>
     </v-navigation-drawer>
+ </v-navigation-drawer>
+
+  <!-- 导航菜单 -->
+    <!-- <v-navigation-drawer
+      v-model="drawer" 
+      fixed temporary
+      >
+    <FrameMenu></FrameMenu>
+    </v-navigation-drawer> -->
 
     <v-main class="grey lighten-2">
       <!-- 操作主页 -->
@@ -50,7 +100,7 @@
 import store from '@/store.js';
 
 // import FrameHead from "../components/frame/FrameHead";
-import FrameMenu from "../components/frame/FrameMenu";
+// import FrameMenu from "../components/frame/FrameMenu";
 import FrameMain from "../components/frame/FrameMain";
 
 
@@ -59,17 +109,22 @@ export default {
   store,
   components: {
     // FrameHead,
-    FrameMenu,
+    // FrameMenu,
     FrameMain,
   },
 
   data: () => ({
-    drawer: store.state.drawer,
-    items: [
+    drawer: false,
+    more: [
       { title: "Click Me" },
       { title: "Click Me" },
       { title: "Click Me" },
       { title: "Click Me 2" },
+    ],
+    menus: [
+        { title: "Dashboard", icon: "mdi-view-dashboard" },
+        { title: "Account", icon: "mdi-account-box" },
+        { title: "Admin", icon: "mdi-gavel" },
     ],
   }),
   methods:{

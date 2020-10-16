@@ -1,11 +1,11 @@
 <template>
-  <div>
-    <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-  <!-- <v-card class="mx-auto" height="100%" width="100%"> -->
+  <v-card class="mx-auto" height="100%" width="100%">
     <v-navigation-drawer 
-     v-model="drawer" 
+     v-model="show" 
      src="@/assets/bg-2.jpg"
-     class="primary" dark permanent>
+     class="primary" 
+     dark 
+     permanent>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
@@ -37,8 +37,7 @@
         </div>
       </template>
     </v-navigation-drawer>
-  <!-- </v-card> -->
-  </div>
+  </v-card>
 </template>
 
 <script>
@@ -48,7 +47,7 @@ export default {
   name: "FrameMenu",
   store,
   data: () => ({
-    drawer: false,
+    show: true,
     items: [
         { title: "Dashboard", icon: "mdi-view-dashboard" },
         { title: "Account", icon: "mdi-account-box" },
