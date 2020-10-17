@@ -1,10 +1,15 @@
 <template>
   <v-app id="inspire">
-     <v-system-bar app>
+    <v-system-bar
+      app
+      dark
+      color="red lighten-2"
+    >
       <v-spacer></v-spacer>
-      <v-icon>mdi-square</v-icon>
-      <v-icon>mdi-circle</v-icon>
-      <v-icon>mdi-triangle</v-icon>
+      <v-icon>mdi-wifi-strength-4</v-icon>
+      <v-icon>mdi-signal-cellular-outline</v-icon>
+      <v-icon>mdi-battery</v-icon>
+      <span>12:30</span>
     </v-system-bar>
 
     <!-- 页面顶端 -->
