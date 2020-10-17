@@ -9,7 +9,7 @@
 
     <!-- 页面顶端 -->
     <v-app-bar app color="primary" dark>
-      <v-app-bar-nav-icon @click="showHide"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon  @click="showHide"></v-app-bar-nav-icon>
       <div class="d-flex align-center">
         <v-img
           alt="Logo"
@@ -39,15 +39,14 @@
       </v-menu>
     </v-app-bar>
 
-   <v-navigation-drawer
-      v-model="drawer" 
-      fixed temporary
-      >
-    <v-navigation-drawer 
-     v-model="drawer" 
-     src="@/assets/bg-2.jpg"
-     class="primary" 
-     fixed temporary>
+     <!--导航菜单  -->
+    <v-navigation-drawer
+      src="@/assets/bg-2.jpg"
+      v-model="drawer"
+      dark
+      app
+    >
+      <v-divider></v-divider>
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
@@ -62,7 +61,7 @@
       <v-divider></v-divider>
 
       <v-list>
-        <v-list-item v-for="item in menus" :key="item.title" link>
+        <v-list-item v-for="item in items" :key="item.title" link>
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -73,24 +72,17 @@
         </v-list-item>
       </v-list>
 
-      <template v-slot:append>
+     <template v-slot:append>
         <div class="pa-2">
-          <v-btn block> Logout </v-btn>
+          <v-btn block>
+            Logout
+          </v-btn>
         </div>
       </template>
     </v-navigation-drawer>
- </v-navigation-drawer>
 
-  <!-- 导航菜单 -->
-    <!-- <v-navigation-drawer
-      v-model="drawer" 
-      fixed temporary
-      >
-    <FrameMenu></FrameMenu>
-    </v-navigation-drawer> -->
-
+    <!-- 操作主页 -->
     <v-main class="grey lighten-2">
-      <!-- 操作主页 -->
       <FrameMain></FrameMain>
     </v-main>
   </v-app>
@@ -103,7 +95,6 @@ import store from '@/store.js';
 // import FrameMenu from "../components/frame/FrameMenu";
 import FrameMain from "../components/frame/FrameMain";
 
-
 export default {
   name: "Home",
   store,
@@ -114,14 +105,14 @@ export default {
   },
 
   data: () => ({
-    drawer: false,
+    drawer: true, //store.state.drawer
     more: [
-      { title: "Click Me" },
-      { title: "Click Me" },
-      { title: "Click Me" },
+      { title: "Click Me 1" },
       { title: "Click Me 2" },
+      { title: "Click Me 3" },
+      { title: "Click Me 4" },
     ],
-    menus: [
+    items: [
         { title: "Dashboard", icon: "mdi-view-dashboard" },
         { title: "Account", icon: "mdi-account-box" },
         { title: "Admin", icon: "mdi-gavel" },
@@ -131,9 +122,8 @@ export default {
     showHide(){
       //store.commit('testLogin');
       this.drawer = !this.drawer;
-      // store.state.drawer = this.drawer;
+      store.state.drawer = this.drawer;
     } 
- 
   } 
 };
 </script>
