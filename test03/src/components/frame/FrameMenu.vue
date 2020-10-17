@@ -1,11 +1,5 @@
 <template>
-    <v-card class="mx-auto"  height="100%" width="100%">
-    <v-navigation-drawer
-      class="primary"
-      fixed
-      permanent
-      height="100%"
-    >
+    <div>
       <v-divider></v-divider>
       <v-list-item>
         <v-list-item-content>
@@ -32,18 +26,17 @@
         </v-list-item>
       </v-list>
 
-      <div class="my-2">
-            <v-btn
-              elevation="8"
-              block
-              small
-              color="primary"
-            >
-              Logout
-            </v-btn>
-      </div>
-    </v-navigation-drawer>   
-    </v-card>
+      <br><br><br><br>
+      <v-divider></v-divider>
+      <!-- v-slot:append -->
+      <template>
+        <div class="pa-2">
+          <v-btn block>
+            Logout
+          </v-btn>
+        </div>
+      </template>
+    </div>
 </template>
 
 <script>
@@ -53,7 +46,7 @@ export default {
   name: "FrameMenu",
   store,
   data: () => ({
-    drawer: store.state.drawer,
+    drawer: true,//store.state.drawer,  
     items: [
         { title: "Dashboard", icon: "mdi-view-dashboard" },
         { title: "Account", icon: "mdi-account-box" },
