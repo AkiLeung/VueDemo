@@ -1,5 +1,5 @@
 <template>
-    <div name = "Main">
+    <div name = "Show">
         <ul >
             <li v-for="good in list" :key="good">
                 <!-- <img v-bind:src="good.img"> -->
@@ -10,14 +10,19 @@
 </template>
 <script>
 export default {
-    name:"Main",
+    name:"Show",
     data(){
         var obj = this;
         var url = "";
+        alert(123);
         if(obj.goodId == 1){
-            url = "json/bjb.json";
+            url = "/json/data1.json";
         } else if(obj.goodId == 2){
-            url = "json/bjb.json";
+            url = "/json/data2.json";
+        } else if(obj.goodId == 3){
+            url = "/json/data3.json";
+        } else{
+            url = "/json/data0.json";
         }
         this.$http.get(url).then(function(res){
             obj.list = res.data;
@@ -34,9 +39,13 @@ export default {
             var obj = this;
             var url = "";
             if(obj.goodId == 1){
-                url = "json/bjb.json";
+                url = "/json/data1.json";
             } else if(obj.goodId == 2){
-                url = "json/bjb.json";
+                url = "/json/data2.json";
+            } else if(obj.goodId == 3){
+                url = "/json/data3.json";
+            } else {
+                url = "/json/data0.json";
             }
             this.$http.get(url).then(function(res){
             obj.list = res.data;

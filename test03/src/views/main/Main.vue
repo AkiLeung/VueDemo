@@ -11,40 +11,32 @@
         </v-col>
       </template>
     </v-row> -->
-    ========{{kk}}=========
-    <List :goodid="1111"></List>
-    123
+    ========={{paraId}}===========
+    <Show :goodId="paraId"></Show>
   </v-container>
 
 </template>
 
 <script>
 import Msg from '../../components/msg'
-import List from '../../components/List.vue'
+import Show from '../../components/Show.vue'
 
 export default {
   name: "Main",
   data(){
     return {
-      kk:0
+      paraId:0
     }
   },
   mounted:function(){
-    var _this = this;
+    var obj = this;
     Msg.$on('val',function(m){
-      _this.kk = m;
+      obj.paraId = m;
     });
   },
   components:{
-    List,
+    Show,
   }
 };
 </script>
-
-<style scoped>
-  /* *{
-    padding: 0;
-    margin: 0;
-  } */
-</style>
 

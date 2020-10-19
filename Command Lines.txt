@@ -31,6 +31,8 @@ cd  ”项目名称”
 
 vue add vuetify
 
+# 安装vue router
+npm install --save vue-router vuex
 --------------------------------------------------------------------------------------------------------
 在 main.js 中引入并使用
 // 引入vuetify
@@ -47,6 +49,12 @@ npm install @mdi/font -D
 import 'vuetify/dist/vuetify.min.css'
 
 npm install axios --save
+cnpm i axios -S
+在main.js中注册********************
+import axios from 'axios'
+
+Vue.prototype.$http = axios
+***********************************
 
 npm run serve
 /******************************************************************************************************/

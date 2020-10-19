@@ -90,8 +90,6 @@ export default {
       logout: function() {
         Msg.$emit("val","logout");
       }
-
-      
   }
 };
 </script>
