@@ -1,7 +1,6 @@
 <template>
   <v-container fill-height>
-    123
-    <v-row>
+    <!-- <v-row>
       <template v-for="n in 4">
         <v-col :key="n" class="mt-2" cols="12">
           <strong>Category {{ n }}</strong>
@@ -11,15 +10,35 @@
           <v-sheet height="150"></v-sheet>
         </v-col>
       </template>
-    </v-row>
+    </v-row> -->
+    ========{{kk}}=========
   </v-container>
 
 </template>
 
 <script>
+import Msg from '../../components/msg'
+
 export default {
   name: "Main",
-  data: () => ({}),
+  data(){
+    return {
+      kk:0
+    }
+  },
+  mounted:function(){
+    var _this = this;
+    Msg.$on('val',function(m){
+      _this.kk = m;
+    });
+  }
 };
 </script>
+
+<style scoped>
+  /* *{
+    padding: 0;
+    margin: 0;
+  } */
+</style>
 

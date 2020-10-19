@@ -21,7 +21,6 @@
 
     <!-- 操作主页 -->
     <v-main class="grey lighten-2" style="paddingTop: 0px">
-      main
       <router-view></router-view>
     </v-main>
 

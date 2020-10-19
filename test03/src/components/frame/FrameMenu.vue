@@ -15,14 +15,35 @@
       <v-divider></v-divider>
 
       <v-list>
-        <v-list-item v-for="item in items" :key="item.title" link>
+        <v-list-item  key="Dashboard" link>
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-icon>
-
           <v-list-item-content>
             <v-list-item-title>
-              <router-link to="/home/main">{{ item.title }}</router-link>
+              <span @click="menu1">Dashboard</span>
+              </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item key="Account" link>
+          <v-list-item-icon>
+            <v-icon>mdi-account-box</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>
+              <span @click="menu2">Account</span>
+              </v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+
+        <v-list-item key="Admin" link>
+          <v-list-item-icon>
+            <v-icon>mdi-gavel</v-icon>
+          </v-list-item-icon>
+          <v-list-item-content>
+            <v-list-item-title>
+              <span @click="menu3">Admin</span>
               </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
@@ -33,7 +54,7 @@
       <!-- v-slot:append -->
       <template>
         <div class="pa-2">
-          <v-btn block>
+          <v-btn block  @click="logout"> 
             Logout
           </v-btn>
         </div>
@@ -43,17 +64,34 @@
 
 <script>
 import store from '@/store.js';
+import Msg from '../msg.js'
 
 export default {
   name: "FrameMenu",
   store,
   data: () => ({
     drawer: true,//store.state.drawer,  
-    items: [
-        { title: "Dashboard", icon: "mdi-view-dashboard" },
-        { title: "Account", icon: "mdi-account-box" },
-        { title: "Admin", icon: "mdi-gavel" },
-    ],
+    // items: [
+    //     { title: "Dashboard", icon: "mdi-view-dashboard",method:"menu1" },
+    //     { title: "Account", icon: "mdi-account-box" ,method:"menu2"},
+    //     { title: "Admin", icon: "mdi-gavel" ,method:"menu3"},
+    // ],
   }),
+  methods:{
+      menu1: function() {
+        Msg.$emit("val","1");
+      },
+      menu2: function() {
+        Msg.$emit("val","2");
+      },
+      menu3: function() {
+        Msg.$emit("val","3");
+      },
+      logout: function() {
+        Msg.$emit("val","logout");
+      }
+
+      
+  }
 };
 </script>
