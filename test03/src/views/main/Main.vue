@@ -12,12 +12,15 @@
       </template>
     </v-row> -->
     ========{{kk}}=========
+    <List :goodid="1111"></List>
+    123
   </v-container>
 
 </template>
 
 <script>
 import Msg from '../../components/msg'
+import List from '../../components/List.vue'
 
 export default {
   name: "Main",
@@ -31,6 +34,9 @@ export default {
     Msg.$on('val',function(m){
       _this.kk = m;
     });
+  },
+  components:{
+    List,
   }
 };
 </script>
