@@ -14,7 +14,6 @@ export default {
     data(){
         var obj = this;
         var url = "";
-        alert(123);
         if(obj.goodId == 1){
             url = "/json/data1.json";
         } else if(obj.goodId == 2){

@@ -15,35 +15,35 @@
       <v-divider></v-divider>
 
       <v-list>
-        <v-list-item  key="Dashboard" link>
+        <v-list-item  key="Dashboard" link @click="menu1">
           <v-list-item-icon>
             <v-icon>mdi-view-dashboard</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
-              <span @click="menu1">Dashboard</span>
+              <span>Dashboard</span>
               </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item key="Account" link>
+        <v-list-item key="Account" link @click="menu2">
           <v-list-item-icon>
             <v-icon>mdi-account-box</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
-              <span @click="menu2">Account</span>
+              <span>Account</span>
               </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
-        <v-list-item key="Admin" link>
+        <v-list-item key="Admin" link @click="menu3">
           <v-list-item-icon>
             <v-icon>mdi-gavel</v-icon>
           </v-list-item-icon>
           <v-list-item-content>
             <v-list-item-title>
-              <span @click="menu3">Admin</span>
+              <span>Admin</span>
               </v-list-item-title>
           </v-list-item-content>
         </v-list-item>
