@@ -64,7 +64,7 @@
 
 <script>
 import store from '@/store.js';
-import Msg from '../msg.js'
+import Msg from '../msg.js';
 
 export default {
   name: "FrameMenu",

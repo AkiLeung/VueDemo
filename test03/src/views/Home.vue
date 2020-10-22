@@ -21,7 +21,8 @@
 
     <!-- 操作主页 -->
     <v-main class="grey lighten-2" style="paddingTop: 0px">
-      <router-view></router-view>
+      <!-- <router-view></router-view> -->
+      <FrameMain></FrameMain>
     </v-main>
 
     <!--页面底部  -->
@@ -35,7 +36,7 @@ import store from '@/store.js';
 import FrameSysBar from "../components/frame/FrameSysBar";
 import FrameHead from "../components/frame/FrameHead";
 import FrameMenu from "../components/frame/FrameMenu";
-// import FrameMain from "../components/frame/FrameMain";
+import FrameMain from "../components/frame/FrameMain";
 import FrameBottom from "../components/frame/FrameBottom";
 
 export default {
@@ -45,7 +46,7 @@ export default {
     FrameSysBar,
     FrameHead,
     FrameMenu,
-    // FrameMain,
+    FrameMain,
     FrameBottom,
   },
 

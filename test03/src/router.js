@@ -3,7 +3,6 @@ import Router from "vue-router";
 import Login from "./views/Login";
 import Home from "./views/Home";
 import Test from "./views/test/Test03";
-import Main from "./views/main/Main";
 import Test1 from "./views/test/Test01";
 import Test2 from "./views/test/Test02";
 
@@ -20,11 +19,7 @@ export default new Router({
       path: "/home",
       name: "home",
       component: Home,
-      children:[{
-        path: "/main",
-        name: "main",
-        component: Main,
-      },
+      children:[
       {
         path: "/homeTest1",
         name: "homeTest1",
