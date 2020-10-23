@@ -13,7 +13,7 @@
           transition="scale-transition"
           width="40"
         />
-      </div>
+      </div> 
 
       <v-spacer></v-spacer>
       <v-toolbar-title>Application Title</v-toolbar-title>
@@ -23,8 +23,8 @@
         <template v-slot:activator="{ on, attrs }">
           <v-btn dark icon v-bind="attrs" v-on="on">
             <v-icon>mdi-dots-vertical</v-icon>
-          </v-btn>
-        </template>
+          </v-btn> 
+        </template> 
         <v-list>
           <v-list-item v-for="(item, i) in more" :key="i">
             <v-list-item-title>{{ item.title }}</v-list-item-title>
