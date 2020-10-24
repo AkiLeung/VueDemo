@@ -34,7 +34,7 @@
   </v-toolbar>
 </template>
 
-<script>
+<script> 
 export default {
   name: "FrameHead",
   props: {
