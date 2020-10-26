@@ -88,7 +88,7 @@ export default {
         Msg.$emit("val","3");
       },
       logout: function() {
-        Msg.$emit("val","logout");
+        Msg.$emit("val","99");
       }
   }
 };
